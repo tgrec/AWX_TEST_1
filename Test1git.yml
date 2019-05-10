@@ -1,7 +1,6 @@
 ---
 - hosts: UDA
   tasks:
-  - name: ensure apache is at the latest version
     service_facts:
     debug:
       var: ansible_facts.services
