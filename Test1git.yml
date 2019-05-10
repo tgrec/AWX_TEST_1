@@ -2,6 +2,7 @@
 - hosts: UDA
   tasks:
   - name: ensure apache is at the latest version
+    service_facts:
     debug:
       msg: "{{ansible_facts.services}}"
     when: "ansible_facts['distribution'] == \"CentOS\""
