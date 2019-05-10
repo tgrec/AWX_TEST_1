@@ -2,5 +2,6 @@
 - hosts: UDA
   tasks:
   - name: ensure apache is at the latest version
-    shell: "echo \"Hi! Tower is working!\""
+    - debug:
+        var: ansible_facts.services:
     when: "ansible_facts['distribution'] == \"CentOS\""
