@@ -1,8 +1,7 @@
 ---
 - hosts: UDA
   tasks:
-    - name: populate service facts
-      service_facts:
-      debug:
+    service_facts:
+    debug:
       var: ansible_facts.services
-      when: "ansible_facts['distribution'] == \"CentOS\""
+    when: "ansible_facts['distribution'] == \"CentOS\""
