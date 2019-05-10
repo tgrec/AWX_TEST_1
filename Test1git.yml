@@ -1,6 +1,4 @@
-- hosts: UDA
-  tasks:
-    service_facts:
-    debug:
-      var: ansible_facts.services
+  hosts: UDA
+  tasks: 
+    shell: echo "Hi"
     when: "ansible_facts['distribution'] == \"CentOS\""
