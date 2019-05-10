@@ -1,4 +1,6 @@
-  hosts: UDA
-  tasks: 
-    shell: echo "Hi"
-    when: "ansible_facts['distribution'] == \"CentOS\""
+---
+- hosts: UDA
+  tasks:
+    - name: test connection
+      ping:
+      remote_user: yourname
