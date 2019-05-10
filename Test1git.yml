@@ -4,8 +4,6 @@
     - debug: var=ansible_facts
     - name: test CentOS connections
       ping:
-      service_facts:
-      debug: var=service_facts
       when: ansible_facts['distribution'] == "CentOS"
     - name: test Windows connection
       win_ping:
