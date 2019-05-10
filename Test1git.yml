@@ -3,4 +3,4 @@
   tasks:
     - name: test connection
       ping:
-      
+      when: ansible_facts['distribution'] == "CentOS"
