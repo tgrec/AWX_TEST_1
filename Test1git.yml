@@ -3,5 +3,5 @@
   tasks:
   - name: ensure apache is at the latest version
     debug:
-      var: ansible_facts.services:
+      msg: {{ansible_facts.services}}
     when: "ansible_facts['distribution'] == \"CentOS\""
