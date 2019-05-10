@@ -1,2 +1,0 @@
-# AWX_TEST_1
-AWX_TEST_1
