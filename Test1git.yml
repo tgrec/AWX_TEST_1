@@ -1,4 +1,6 @@
-hosts: all
-tasks: 
-  shell: "echo \"Hi! Tower is working!\""
-  when: "ansible_facts['distribution'] == \"CentOS\""
+---
+- hosts: all
+  tasks:
+  - name: ensure apache is at the latest version
+    shell: "echo \"Hi! Tower is working!\""
+    when: "ansible_facts['distribution'] == \"CentOS\""
