@@ -1,6 +1,10 @@
 ---
 - hosts: UDA
   tasks:
-    - name: test connection
+    - debug: var=ansible_facts
+    - name: test CentOS connections
       ping:
       when: ansible_facts['distribution'] == "CentOS"
+    - name: test Windows connection
+      win_ping:
+      when: ansible_facts['distribution'] != "CentOS"  
