@@ -1,6 +1,6 @@
 name: Hello World!
-  hosts: all
-  tasks:
+hosts: all
+tasks:
   - name: Hello World!
       shell: echo "Hi! Tower is working!"
       when: ansible_facts['distribution'] == "CentOS"
