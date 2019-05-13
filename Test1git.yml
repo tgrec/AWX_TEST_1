@@ -3,7 +3,7 @@
   tasks:
     - debug: var=ansible_facts
     - name: test CentOS connections
-      net_ping:
+      ping:
       register: pingout
       when: ansible_facts['distribution'] == "CentOS"
     - name: test Windows connection
