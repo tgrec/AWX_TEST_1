@@ -12,5 +12,7 @@
       when: ansible_facts['distribution'].find("Windows") != -1
     - debug: msg="{{ pingout }}"
     - name: view Services
-      debug: var=service_facts
+      service_facts:
+      register: src_facts
+      debug: msg="{{ src_facts }}"
     
