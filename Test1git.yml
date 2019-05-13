@@ -5,9 +5,9 @@
     - name: test CentOS connections
       ping:
       register: pingout
-      - debug: msg="{{ pingout.rc }}"
       when: ansible_facts['distribution'] == "CentOS"
     - name: test Windows connection
       win_ping:
       register: pingout
       when: ansible_facts['distribution'].find("Windows") != -1
+    - debug: msg="{{ pingout.rc }}"
