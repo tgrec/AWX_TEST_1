@@ -11,8 +11,13 @@
       register: pingout
       when: ansible_facts['distribution'].find("Windows") != -1
     - debug: msg="{{ pingout }}"
-    - name: view Services
+    - name: view CentOS Services
       service_facts:
       register: src_facts
+      when: ansible_facts['distribution'] == "CentOS"
+    - name: view Windows Services
+      win_shell: Get-Service
+      register: src_facts
+      when: ansible_facts['distribution'].find("Windows") != -1  
     - debug: msg="{{ src_facts }}"
     
