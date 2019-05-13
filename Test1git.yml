@@ -20,10 +20,6 @@
       register: src_facts
       when: ansible_facts['distribution'].find("Windows") != -1  
     - debug: msg="{{ src_facts }}"
-    - name: Install Yum Utils
-      shell: yum install -y yum-utils 
-      when: ansible_facts['distribution'] == "CentOS"
-    - yum:
-        list: installed
-      register: result
+    - name: Run Bash script
+    - script: /home/cotestdev/tgreco/dev/scripts/hello.sh
       when: ansible_facts['distribution'] == "CentOS"
