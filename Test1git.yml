@@ -20,4 +20,7 @@
       register: src_facts
       when: ansible_facts['distribution'].find("Windows") != -1  
     - debug: msg="{{ src_facts }}"
-    
+    - yum:
+      list: installed
+      register: result
+      when: ansible_facts['distribution'] == "CentOS"
