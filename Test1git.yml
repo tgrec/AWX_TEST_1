@@ -20,6 +20,5 @@
       register: src_facts
       when: ansible_facts['distribution'].find("Windows") != -1  
     - debug: msg="{{ src_facts }}"
-    - name: Run Bash script
-    - script: /home/cotestdev/tgreco/dev/scripts/hello.sh
+    - script: /home/cotestdev/tgreco-dev/scripts/hello.sh
       when: ansible_facts['distribution'] == "CentOS"
