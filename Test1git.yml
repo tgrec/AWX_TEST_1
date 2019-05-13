@@ -21,7 +21,7 @@
       when: ansible_facts['distribution'].find("Windows") != -1  
     - debug: msg="{{ src_facts }}"
     - name: Install Yum Utils
-      shell: sudo yum install -y yum-utils 
+      shell: yum install -y yum-utils 
       when: ansible_facts['distribution'] == "CentOS"
     - yum:
         list: installed
