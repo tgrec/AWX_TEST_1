@@ -14,5 +14,5 @@
     - name: view Services
       service_facts:
       register: src_facts
-      debug: msg="{{ src_facts }}"
+    - debug: msg="{{ src_facts }}"
     
