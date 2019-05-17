@@ -20,8 +20,8 @@ class DynamicInventory(object):
         self.inventory = {}
         self.args = args
         cnxn = pyodbc.connect("Driver={SQL Server Native Client 11.0};"
-                      "Server=server_name;"
-                      "Database=db_name;"
+                      "Server=DEV_CMDB_AG;"
+                      "Database=CMDB;"
                       "Trusted_Connection=yes;")
         self.cursor = self.cnxn.cursor(dictionary=True)
         
@@ -96,4 +96,4 @@ def main():
 
 
 if __name__ == '__main__':
-	main()
+main()
